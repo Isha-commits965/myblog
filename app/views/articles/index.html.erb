@@ -1,0 +1,27 @@
+<h1 class="text-center mt-4">Listing all articles</h1>
+
+<div class="flickr_pagination">
+    <%= will_paginate @articles, :container => false %>
+  </div>
+<%= render 'article' %>
+
+<div class="flickr_pagination mb-5">
+    <%= will_paginate @articles, :container => false %>
+  </div>
+
+
+
+
+
+
+        <%
+=begin%>
+ <td><%= link_to 'Show', article_path(article) %></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Delete', article_path(article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td> 
+<%
+=end%>
+
+<p class="text-center">
+<%= link_to 'Create new article', new_article_path %>
+</p>
